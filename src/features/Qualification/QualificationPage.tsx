@@ -22,7 +22,7 @@ const qualifications = [
 
 export default function QualificationPage() {
   return (
-    <section className="py-8 md:py-16 h-min-[90vh]" id="qual">
+    <section className="py-8 md:py-16 min-h-[90vh]" id="qual">
       <CurvedLoop
         marqueeText="Qualifications ✦ Qualifications ✦ Qualifications ✦ Qualifications ✦ Qualifications ✦"
         speed={2}

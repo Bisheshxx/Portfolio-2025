@@ -74,11 +74,10 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const { accent, setAccent } = useAccent();
-  const { theme, setTheme, themeColor } = useAccentChange(accent, setAccent);
+  const { theme, setTheme, themeColor, accent } = useAccentChange();
 
   return (
-    <div className="sticky top-0 z-[777] flex justify-center items-center p-4 cursor-pointer">
+    <div className="sticky top-7 md:top-4 z-[777] flex justify-center items-center cursor-pointer">
       <nav className="flex gap-1 md:gap-5">
         <div
           className="relative flex justify-between md:gap-4 border border-white bg-white/30 backdrop-blur-sm

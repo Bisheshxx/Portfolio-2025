@@ -37,12 +37,13 @@ export default function Map() {
       />
     );
   return (
-    <div className="w-full h-full rounded-xl">
+    <div className="w-full h-full ">
       <MapContainer
         center={[-36.8509, 174.7645]}
         zoom={12}
         // scrollWheelZoom={false}
         style={{ width: "100%", height: "100%" }}
+        className="rounded-2xl overflow-hidden"
       >
         {content}
         {/* <TileLayer

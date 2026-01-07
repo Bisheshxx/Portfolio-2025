@@ -94,7 +94,7 @@ function ProjectCard({
               className="rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300 w-full h-full object-cover"
             />
           </div>
-          <div className="flex flex-col gap-3 my-2 justify-center p-2 md:p-4 ">
+          <div className="flex flex-col gap-3 my-2 justify-center p-4 md:p-4 ">
             {/* <CircleChevronRight className="h-5 w-5 " strokeWidth={1} /> */}
             <div className="flex justify-between items-center ">
               <h3

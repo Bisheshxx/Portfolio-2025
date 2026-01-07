@@ -173,7 +173,7 @@ export default function Timeline() {
               boxShadow: `0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)`,
               // border: "1px solid rgba(255, 255, 255, 0.6)",
               borderRadius: "20px",
-              padding: "1.5rem",
+              // padding: "1.5rem",
             }}
             contentArrowStyle={{
               borderRight: `7px solid ${
@@ -216,7 +216,7 @@ export default function Timeline() {
             boxShadow:
               "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
             borderRadius: "20px",
-            padding: "1.5rem",
+            // padding: "1.5rem",
           }}
           contentArrowStyle={{
             borderRight: "7px solid rgba(237, 233, 254, 0.9)",

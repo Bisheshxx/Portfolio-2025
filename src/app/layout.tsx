@@ -53,15 +53,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${DotGothic.variable} ${manRope.variable} ${montserrat.variable} antialiased md:w-[767px] mx-auto font-montserrat `}
+        className={`${geistSans.variable} ${geistMono.variable} ${DotGothic.variable} ${manRope.variable} ${montserrat.variable} antialiased md:w-[767px] mx-auto font-montserrat relative w-full`}
       >
         <ThemeProvider>
           <AccentWrapper>
-            <LoaderOverlay />
             <Navbar />
             {children}
             <Footer />
             <ContactIcon />
+            {/* <LoaderOverlay /> */}
           </AccentWrapper>
         </ThemeProvider>
       </body>

@@ -13,9 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import WithTooltip from "@/shared/components/WithTooltip";
 import { motion } from "framer-motion";
-import LogoCarousel from "./MarqueeItem";
-import MarqueeItem from "./MarqueeItem";
-import ExperiencePage from "../Experience/ExperiencePage";
+
 import Stack from ".";
 import dynamic from "next/dynamic";
 
@@ -23,79 +21,76 @@ const Map = dynamic(() => import("../Map"), { ssr: false });
 
 import { useClock } from "@/Customhooks/useClock";
 import { useDayNight } from "@/Customhooks/useDayNight";
-import { useAccent } from "@/Providers/ThemeProvider";
 import { twMerge } from "tailwind-merge";
 import useAccentChange from "@/Customhooks/useAccentChange";
 import FadeIn from "@/shared/components/Framer-components/FadeIn";
 
 export default function Homepage() {
   return (
-    <div>
-      <section className="mx-6 md:mx-0" id="home">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          <div className="col-span-1 md:col-span-2 flex flex-col justify-between gap-2 bg-center md:text-left">
-            <div className="w-full flex justify-center items-center gap-2">
-              <h1 className="font-bold text-lg md:text-5xl md:w-full font-man-rope flex gap-2 tracking-tighter">
-                Yo, Bishesh here.
-                <motion.div
-                  whileHover={{
-                    rotate: [-10, 0, 10, 0, -10],
-                    transition: {
-                      repeat: Infinity,
-                      duration: 0.8,
-                      ease: "linear",
-                      repeatType: "loop",
-                    },
-                  }}
-                  className="cursor-pointer"
-                  style={{ originX: 0.5, originY: 0.5 }}
-                >
-                  👋
-                </motion.div>
-              </h1>
-            </div>
+    <section className="mx-6 md:mx-0" id="home">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 grid-">
+        <div className="col-span-1 md:col-span-2 flex flex-col justify-between gap-2 bg-center md:text-left">
+          <div className="w-full flex justify-center items-center gap-2 mt-14">
+            <h1 className="font-bold text-lg md:text-5xl md:w-full font-man-rope flex gap-2 tracking-tighter">
+              Yo, Bishesh here.
+              <motion.div
+                whileHover={{
+                  rotate: [-10, 0, 10, 0, -10],
+                  transition: {
+                    repeat: Infinity,
+                    duration: 0.8,
+                    ease: "linear",
+                    repeatType: "loop",
+                  },
+                }}
+                className="cursor-pointer"
+                style={{ originX: 0.5, originY: 0.5 }}
+              >
+                👋
+              </motion.div>
+            </h1>
+          </div>
 
-            <div className="flex flex-col gap-2">
-              <div className="text-center md:text-left text-sm md:text-lg tracking-tighter">
-                28 y.o. software developer from Nepal 🇳🇵
-              </div>
-              <div className="text-center md:text-left text-sm md:text-lg tracking-tighter">
-                I build modern web applications and love solving real-world
-                problems.
-              </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-center md:text-left text-sm md:text-lg tracking-tighter">
+              28 y.o. software developer from Nepal 🇳🇵
             </div>
-            <div className="w-full flex gap-10 md:justify-start justify-center">
-              <Github className="cursor-pointer" />
-              <Linkedin className="cursor-pointer" />
-              <WithTooltip description="Download CV">
-                <motion.div
-                  whileHover={{
-                    scale: 1.5,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{
-                    scale: 0.9,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  <DownloadCloud className="cursor-pointer" />
-                </motion.div>
-              </WithTooltip>
+            <div className="text-center md:text-left text-sm md:text-lg tracking-tighter">
+              I build modern web applications and love solving real-world
+              problems.
             </div>
           </div>
-          <div className="flex justify-center items-center">
-            <div className="h-[250px] w-[250px] mr-20">
-              <Stack />
-            </div>
+          <div className="w-full flex gap-10 md:justify-start justify-center">
+            <Github className="cursor-pointer" />
+            <Linkedin className="cursor-pointer" />
+            <WithTooltip description="Download CV">
+              <motion.div
+                whileHover={{
+                  scale: 1.5,
+                  transition: { duration: 0.2 },
+                }}
+                whileTap={{
+                  scale: 0.9,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <DownloadCloud className="cursor-pointer" />
+              </motion.div>
+            </WithTooltip>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mt-10 text-center md:text-left">
-          <MapContainer />
-          <ClockContainer />
-          <AccentContainer />
+        <div className="flex justify-center items-center">
+          <div className="w-full h-[300px] object-fit md:h-[250px] md:w-[250px] md:mr-20">
+            <Stack />
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mt-10 text-center md:text-left">
+        <MapContainer />
+        <ClockContainer />
+        <AccentContainer />
+      </div>
+    </section>
   );
 }
 
@@ -132,7 +127,9 @@ const ClockContainer = () => {
       <div className="flex justify-center items-center h-24 ">
         <div className="flex items-center gap-2">
           {isDay ? <Sun size={50} /> : <Moon size={50} />}
-          <span className="tabular-nums text-5xl ">{currentTime}</span>
+          <span className="tabular-nums text-4xl md:text-5xl ">
+            {currentTime}
+          </span>
         </div>
       </div>
     </FadeIn>
