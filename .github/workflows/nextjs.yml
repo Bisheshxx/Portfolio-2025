@@ -62,7 +62,7 @@ jobs:
         run: pnpm run build
         env:
           PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          # RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
