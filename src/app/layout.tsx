@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     "Full Stack Developer showcasing projects in web development, mobile apps, and cloud deployment. Explore my portfolio, skills, and experience.",
   keywords: ["portfolio", "developer", "web development", "full stack"],
   metadataBase: new URL("https://bisheshxx.vercel.app/"),
+  // robots: { canonical: "https://bisheshxx.vercel.app/" },
   openGraph: {
     title: "Bishesh Tuladhar | Full Stack Developer Portfolio",
     description:
@@ -70,7 +71,10 @@ export const metadata: Metadata = {
     creator: "@bisheshxx",
     images: "/profile-bishesh.png",
   },
-  robots: "index, follow",
+  alternates: {
+    canonical: "https://bisheshxx.vercel.app/",
+  },
+  // robots: "index, follow",
 };
 
 export default function RootLayout({
