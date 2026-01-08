@@ -53,10 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Analytics />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${DotGothic.variable} ${manRope.variable} ${montserrat.variable} antialiased md:w-[767px] mx-auto font-montserrat relative w-full`}
       >
+        <Analytics />
         <ThemeProvider>
           <AccentWrapper>
             <Navbar />
