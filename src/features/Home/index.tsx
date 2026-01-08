@@ -1,3 +1,4 @@
+"use client";
 import {
   motion,
   useMotionValue,
@@ -123,6 +124,9 @@ export default function Stack({
               src={"/profile-image5.png"}
               alt="card-1"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
+              loading="lazy"
+              quality={45}
+              placeholder="empty"
             />
           ),
         },
@@ -135,6 +139,9 @@ export default function Stack({
               src={"/profile-image2.png"}
               alt="card-2"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
+              loading="lazy"
+              quality={45}
+              placeholder="empty"
             />
           ),
         },
@@ -147,6 +154,9 @@ export default function Stack({
               src={"/profile-image3.png"}
               alt="card-3"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
+              loading="lazy"
+              quality={45}
+              placeholder="empty"
             />
           ),
         },
@@ -159,6 +169,9 @@ export default function Stack({
               src={"/profile-image1.png"}
               alt="card-4"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
+              loading="lazy"
+              quality={45}
+              placeholder="empty"
             />
           ),
         },

@@ -38,8 +38,10 @@ export default function LoaderOverlay() {
         src={Luffy}
         alt="Loading"
         className="scale-x-[-1] h-56 w-56"
-        height={300}
-        width={300}
+        height={224}
+        width={224}
+        priority
+        quality={75}
       />
     </div>
   );

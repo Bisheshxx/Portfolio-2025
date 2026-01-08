@@ -130,16 +130,12 @@ function ProjectCard({
               </Badge>
               {stack.map((tech, i) => (
                 <Badge
+                  key={i}
                   variant="outline"
                   style={{ color: themeColor[i] }}
                   className="rounded-sm bg-offwhite dark:bg-gray-700 border-gray-500/60"
                 >
-                  {/* <span
-                    key={i}
-                    className="text-xs px-2 py-1 bg-gray-400 rounded-xl"
-                  > */}
                   {tech}
-                  {/* </span> */}
                 </Badge>
               ))}
             </div>

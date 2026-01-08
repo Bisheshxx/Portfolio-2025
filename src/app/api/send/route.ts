@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { GetInTouchTemplate } from "./templates/get-in-touch";
-import { NextResponse } from "next/dist/server/web/spec-extension/response";
+import { NextResponse } from "next/server";
 
 type ResendSendEmailResponse = Awaited<ReturnType<typeof resend.emails.send>>;
 
@@ -157,3 +157,5 @@ export async function GET() {
     { status: 405 }
   );
 }
+
+export const runtime = "edge";

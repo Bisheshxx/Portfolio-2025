@@ -7,6 +7,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { useEffect, useState } from "react";
 
 interface ExperienceItem {
   company: string;
@@ -154,9 +155,21 @@ const getIcon = (type: "work" | "code") => {
 
 export default function Timeline() {
   const { themeColor, accent, theme } = useAccentChange();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Use theme value if available, otherwise default to 'dark' for initial render
+  const currentTheme = isMounted ? theme : "dark";
+  const timelineLineColor =
+    currentTheme === "dark"
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(0, 0, 0, 0.15)";
   return (
     <section className="py-8 md:py-16">
-      <VerticalTimeline lineColor="rgba(0, 0, 0, 0.15)" animate={false}>
+      <VerticalTimeline lineColor={timelineLineColor} animate={false}>
         {experiences.map((exp, index) => (
           <VerticalTimelineElement
             key={index}

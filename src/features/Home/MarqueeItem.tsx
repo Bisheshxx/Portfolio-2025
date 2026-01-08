@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface IProps {
   images: string[];
@@ -17,7 +18,21 @@ const MarqueeItem = ({ images, from, to }: IProps) => {
         className="flex flex-shrink-0"
       >
         {images.map((image, index) => {
-          return <img className="h-12 w-auto pr-20" src={image} key={index} />;
+          return (
+            <div
+              key={index}
+              className="h-12 w-auto pr-20 relative flex-shrink-0"
+            >
+              <Image
+                src={image}
+                alt={`marquee-${index}`}
+                height={48}
+                width={48}
+                loading="lazy"
+                quality={75}
+              />
+            </div>
+          );
         })}
       </motion.div>
 
@@ -28,7 +43,21 @@ const MarqueeItem = ({ images, from, to }: IProps) => {
         className="flex flex-shrink-0"
       >
         {images.map((image, index) => {
-          return <img className="h-12 w-auto pr-20" src={image} key={index} />;
+          return (
+            <div
+              key={`dup-${index}`}
+              className="h-12 w-auto pr-20 relative flex-shrink-0"
+            >
+              <Image
+                src={image}
+                alt={`marquee-dup-${index}`}
+                height={48}
+                width={48}
+                loading="lazy"
+                quality={75}
+              />
+            </div>
+          );
         })}
       </motion.div>
     </div>
