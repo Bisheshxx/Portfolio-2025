@@ -2,11 +2,11 @@
 
 import { TileLayer } from "react-leaflet/TileLayer";
 import { useMap } from "react-leaflet/hooks";
-import { MapContainer, Marker, Popup } from "react-leaflet";
+import { MapContainer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function Map() {

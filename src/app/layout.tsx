@@ -60,7 +60,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
-            {/* <ContactIcon /> */}
+            <ContactIcon />
             <LoaderOverlay />
           </AccentWrapper>
         </ThemeProvider>

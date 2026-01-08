@@ -41,7 +41,7 @@ export default function LoaderOverlay() {
         height={224}
         width={224}
         priority
-        quality={75}
+        quality={50}
       />
     </div>
   );

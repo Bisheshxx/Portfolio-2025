@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 year for optimized images
   },
+  dynamicIO: true,
 };
 
 export default nextConfig;

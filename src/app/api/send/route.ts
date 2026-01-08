@@ -14,6 +14,9 @@ const requestCounts = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT = 5; // requests per hour
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in ms
 
+// Disable caching for this API route
+export const revalidate = 0;
+
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
   const record = requestCounts.get(ip);
