@@ -13,6 +13,7 @@ import ContactIcon from "@/features/Contact/ContactIcon";
 import LoaderOverlay from "@/features/LoaderOverlay";
 import { ThemeProvider } from "@/Providers/ThemeProvider";
 import AccentWrapper from "@/Wrapper/AccentWrapper";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${DotGothic.variable} ${manRope.variable} ${montserrat.variable} antialiased md:w-[767px] mx-auto font-montserrat relative w-full`}
       >
