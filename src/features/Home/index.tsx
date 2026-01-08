@@ -6,9 +6,6 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Image2 from "../../../public/profile-image2.png";
-import Image3 from "../../../public/profile-image3.png";
-import Image1 from "../../../public/profile-image1.jpeg";
 
 interface CardRotateProps {
   children: React.ReactNode;
@@ -123,7 +120,7 @@ export default function Stack({
             <Image
               height={250}
               width={150}
-              src={"/profile-image5.jpeg"}
+              src={"/profile-image5.png"}
               alt="card-1"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
             />
