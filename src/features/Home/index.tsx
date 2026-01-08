@@ -156,7 +156,7 @@ export default function Stack({
             <Image
               height={250}
               width={150}
-              src={"/profile-image1.jpeg"}
+              src={"/profile-image1.png"}
               alt="card-4"
               className="w-full h-full object-cover pointer-events-none rounded-2xl"
             />

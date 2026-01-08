@@ -61,7 +61,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <ContactIcon />
-            {/* <LoaderOverlay /> */}
+            <LoaderOverlay />
           </AccentWrapper>
         </ThemeProvider>
       </body>
