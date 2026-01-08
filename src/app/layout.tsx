@@ -87,7 +87,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${DotGothic.variable} ${manRope.variable} ${montserrat.variable} antialiased md:w-[767px] mx-auto font-montserrat relative w-full`}
       >
-        <Analytics />
         <ThemeProvider>
           <AccentWrapper>
             <Navbar />
@@ -95,6 +94,7 @@ export default function RootLayout({
             <Footer />
             <ContactIcon />
             <LoaderOverlay />
+            <Analytics />
           </AccentWrapper>
         </ThemeProvider>
         <script
