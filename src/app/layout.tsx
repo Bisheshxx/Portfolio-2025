@@ -48,12 +48,13 @@ export const metadata: Metadata = {
   keywords: ["portfolio", "developer", "web development", "full stack"],
   metadataBase: new URL("https://bisheshxx.vercel.app/"),
   openGraph: {
-    title: "Bishesh Tuladhar - Developer Portfolio",
-    description: "Full Stack Developer Portfolio",
+    title: "Bishesh Tuladhar - Full Stack Developer Portfolio",
+    description:
+      "Experienced Full Stack Developer specializing in web development, mobile apps, and cloud deployment. Explore my projects, skills, and experience.",
     type: "website",
     images: [
       {
-        url: "/profile-picture.png",
+        url: "/profile-bishesh.png",
         width: 1200,
         height: 630,
         alt: "Bishesh Tuladhar Portfolio",
@@ -62,8 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bishesh Tuladhar - Developer Portfolio",
-    description: "Full Stack Developer Portfolio",
+    title: "Bishesh Tuladhar - Full Stack Developer Portfolio",
+    description:
+      "Experienced Full Stack Developer specializing in web development, mobile apps, and cloud deployment. Explore my projects, skills, and experience.",
   },
   robots: "index, follow",
 };
@@ -101,7 +103,7 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/bishesh-tuladhar-9a3888193/",
                 "https://github.com/Bisheshxx",
               ],
-              image: "/profile-picture.png",
+              image: "https://bisheshxx.vercel.app/profile-bishesh.png",
             }),
           }}
         />
