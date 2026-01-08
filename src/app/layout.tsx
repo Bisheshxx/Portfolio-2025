@@ -42,16 +42,17 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Bishesh Tuladhar - Full Stack Developer Portfolio",
+  title: "Bishesh Tuladhar | Full Stack Developer Portfolio",
   description:
     "Full Stack Developer showcasing projects in web development, mobile apps, and cloud deployment. Explore my portfolio, skills, and experience.",
   keywords: ["portfolio", "developer", "web development", "full stack"],
   metadataBase: new URL("https://bisheshxx.vercel.app/"),
   openGraph: {
-    title: "Bishesh Tuladhar - Full Stack Developer Portfolio",
+    title: "Bishesh Tuladhar | Full Stack Developer Portfolio",
     description:
       "Experienced Full Stack Developer specializing in web development, mobile apps, and cloud deployment. Explore my projects, skills, and experience.",
     type: "website",
+    url: "https://bisheshxx.vercel.app/",
     images: [
       {
         url: "/profile-bishesh.png",
@@ -63,9 +64,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bishesh Tuladhar - Full Stack Developer Portfolio",
+    title: "Bishesh Tuladhar | Full Stack Developer Portfolio",
     description:
       "Experienced Full Stack Developer specializing in web development, mobile apps, and cloud deployment. Explore my projects, skills, and experience.",
+    creator: "@bisheshxx",
+    images: "/profile-bishesh.png",
   },
   robots: "index, follow",
 };
