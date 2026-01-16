@@ -12,7 +12,7 @@ export default function Home() {
       <Homepage />
       <SkillsPage />
       <ExperiencePage />
-      <ProjectsPage />
+      {/* <ProjectsPage /> */}
       <QualificationPage />
     </div>
   );

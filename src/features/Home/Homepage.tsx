@@ -5,7 +5,7 @@ import Wave from "@/shared/components/Framer-components/Wave";
 
 export default function Homepage() {
   return (
-    <section className="mx-6 md:mx-0" id="home">
+    <section className="mx-6 mt-10 md:mx-0" id="home">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2 grid-">
         <div className="col-span-1 md:col-span-2 flex flex-col justify-between gap-2 bg-center md:text-left">
           <div className="w-full flex justify-center items-center gap-2 mt-14">
