@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import { useAccent } from "@/Providers/ThemeProvider";
 import useAccentChange from "@/Customhooks/useAccentChange";
 
-const sections = ["home", "skills", "exp", "qual"];
+const sections = ["home", "skills", "exp", "project"];
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
