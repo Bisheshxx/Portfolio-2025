@@ -3,17 +3,18 @@ import React, { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useAccent } from "@/Providers/ThemeProvider";
 import useAccentChange from "@/Customhooks/useAccentChange";
+import useNavbarContrast from "@/Customhooks/useNavbarContrast";
 
 const sections = ["home", "skills", "exp", "project"];
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const isScrollingRef = useRef(false);
+  const navbarRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
+  const { isOverLightBackground } = useNavbarContrast(navbarRef);
 
   const performScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -77,7 +78,10 @@ export default function Navbar() {
   const { theme, setTheme, themeColor, accent } = useAccentChange();
 
   return (
-    <div className="sticky top-7 md:top-4 z-[777] flex justify-center items-center cursor-pointer">
+    <div
+      ref={navbarRef}
+      className="sticky top-7 md:top-4 z-[777] flex justify-center items-center cursor-pointer"
+    >
       <nav className="flex gap-1 md:gap-5">
         <div
           className="relative flex justify-between md:gap-4 border border-white bg-white/30 backdrop-blur-sm
@@ -109,8 +113,15 @@ export default function Navbar() {
                 )}
                 <span
                   className={`relative z-10 ${
-                    isActive ? "text-background" : "text-foreground"
+                    isActive ? "text-background" : ""
                   }`}
+                  style={
+                    isActive
+                      ? undefined
+                      : {
+                          color: isOverLightBackground ? "#111827" : undefined,
+                        }
+                  }
                 >
                   {id}
                 </span>
