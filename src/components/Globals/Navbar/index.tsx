@@ -6,9 +6,8 @@ import { Moon, Sun } from "lucide-react";
 import useAccentChange from "@/Customhooks/useAccentChange";
 import useNavbarContrast from "@/Customhooks/useNavbarContrast";
 
-const sections = ["home", "skills", "exp", "project"];
-
 export default function Navbar() {
+  const sections = ["home", "skills", "exp", "project"];
   const [activeSection, setActiveSection] = useState("home");
   const isScrollingRef = useRef(false);
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -128,11 +127,11 @@ export default function Navbar() {
                     isActive ? "text-background" : ""
                   }`}
                   style={
-                    isActive
-                      ? undefined
-                      : {
+                    activeSection === "project" && !isActive
+                      ? {
                           color: isOverLightBackground ? "#111827" : undefined,
                         }
+                      : undefined
                   }
                 >
                   {id}

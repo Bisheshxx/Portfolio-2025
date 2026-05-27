@@ -42,7 +42,9 @@ export default function Form() {
       } else {
       }
     } catch (error) {
-      console.log(error);
+      setError("root", {
+        message: "Server error. Please try again in a moment.",
+      });
     }
   });
 
