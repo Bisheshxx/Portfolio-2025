@@ -12,9 +12,16 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const isScrollingRef = useRef(false);
   const navbarRef = useRef<HTMLDivElement>(null);
+  const lastSectionRef = useRef("home");
   const router = useRouter();
   const pathname = usePathname();
   const { isOverLightBackground } = useNavbarContrast(navbarRef);
+
+  const updateHash = (id: string) => {
+    if (window.location.hash !== `#${id}`) {
+      history.replaceState(null, "", `#${id}`);
+    }
+  };
 
   const performScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -25,7 +32,8 @@ export default function Navbar() {
         element.getBoundingClientRect().top + window.scrollY - navbarHeight;
       window.scrollTo({ top: y, behavior: "smooth" });
       setActiveSection(id);
-      history.replaceState(null, "", `#${id}`);
+      lastSectionRef.current = id;
+      updateHash(id);
 
       // unlock after smooth scroll ends
       setTimeout(() => {
@@ -57,8 +65,11 @@ export default function Navbar() {
       }
     }
 
-    setActiveSection(currentSection);
-    history.replaceState(null, "", `#${currentSection}`);
+    if (currentSection !== lastSectionRef.current) {
+      lastSectionRef.current = currentSection;
+      setActiveSection(currentSection);
+      updateHash(currentSection);
+    }
   };
   useEffect(() => {
     // Handle hash navigation on page load
@@ -70,6 +81,7 @@ export default function Navbar() {
       }, 100);
     }
 
+    lastSectionRef.current = hash && sections.includes(hash) ? hash : "home";
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
